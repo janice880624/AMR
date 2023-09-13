@@ -193,9 +193,9 @@ if __name__ == "__main__":
                             centerx1, centery1, points11, points12, points13, points14 = result1
                             draw_circles_on_frame(frame, centerx1, centery1, points11, points12, points13, points14)
 
-                            print("centerx1 => ", points12[0])
+                            print("centerx1 => ", points11[0])
 
-                            need_x = int(points12[0] - x_value)
+                            need_x = int(points11[0] - x_value)
                             
                             print("x need => ", need_x)
                             print("-----------------")
@@ -239,23 +239,23 @@ if __name__ == "__main__":
                             centerx2, centery2, points21, points22, points23, points24 = result2
                             draw_circles_on_frame(frame, centerx2, centery2, points21, points22, points23, points24)
 
-                            need_z = int(points23[1]-points22[1])
+                            need_z = int(points22[1]-points21[1])
                             print("y need => ", need_z)
                             print("-----------------")
     
-                            if -5 < int(points23[1]-points22[1]) < 5:
-                                print(points23[1])
+                            if -5 < int(points22[1]-points21[1]) < 5:
                                 print(points22[1])
+                                print(points21[1])
                                 check[1] = 1
                             else:
                                 check[1] = 0
 
 
-                                if int(points23[1]-points22[1]) > 5:
+                                if int(points22[1]-points21[1]) > 5:
                                     bb(input_speed, 0.5)
                                     print("turn left")
     
-                                if int(points23[1]-points22[1]) < -5:
+                                if int(points22[1]-points21[1]) < -5:
                                     aa(input_speed, 0.5)
                                     print("turn right")
 
@@ -289,19 +289,19 @@ if __name__ == "__main__":
                             draw_circles_on_frame(
                                 frame, centerx3, centery3, points31, points32, points33, points34)
 
-                            need_z = int(points12[1] - y_value)
-                            print("y need => ", need_z)
+                            need_y = int(points31[1] - y_value)
+                            print("y need => ", need_y)
                             print("-----------------")
 
-                            if -5 < need_z < 5:
+                            if -5 < need_y < 5:
                                 check[2] = 1
                             else:
                                 check[2] = 0
                                 
-                                if need_z > -5:
+                                if need_y > -5:
                                     jaw_down(0.4)
                                     print("move down")
-                                if need_z <  5:
+                                if need_y <  5:
                                     jaw_up(0.4)
                                     print("move up")
                         else:
