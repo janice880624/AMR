@@ -170,9 +170,9 @@ if __name__ == "__main__":
 
                 logger.info("connected")
 
-                x_value = 601 #左右標準答案
-                y_value = 520 #前後標準答案
-                check_area = 14606 #面積標準答案
+                x_value = 720 #左右標準答案
+                y_value = 616 #前後標準答案
+                check_area = 24500 #面積標準答案
 
                 if ret and check != [1, 1, 1]:
 
@@ -299,10 +299,10 @@ if __name__ == "__main__":
                                 check[2] = 0
                                 
                                 if need_y > -5:
-                                    jaw_down(0.4)
+                                    jaw_down(0.05)
                                     print("move down")
                                 if need_y <  5:
-                                    jaw_up(0.4)
+                                    jaw_up(0.5)
                                     print("move up")
                         else:
                             continue
@@ -317,6 +317,16 @@ if __name__ == "__main__":
                         print("up/down finished")
 
                     # %% All done
+
+
+                    right(input_speed, 4)
+                    jaw_front(12) 
+                    jaw_stop()
+                    left(input_speed, 0.1)
+                    time.sleep(2)
+                    jaw_close()
+                    left(input_speed, 4)
+
 
             except AttributeError as e:
                 print("error:", e)
